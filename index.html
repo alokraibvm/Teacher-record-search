@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Record Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Teacher Record</p>
+        <h1>Search students by class and section</h1>
+        <p class="intro">
+          Choose a class and section, then search to see matching student records
+          sorted in ascending order by name.
+        </p>
+
+        <form id="search-form" class="filter-grid">
+          <label class="field">
+            <span>Class</span>
+            <select id="class-select" required disabled>
+              <option value="">Loading classes...</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Section</span>
+            <select id="section-select" required disabled>
+              <option value="">Select a class first</option>
+            </select>
+          </label>
+
+          <button id="search-button" type="submit" disabled>Search</button>
+        </form>
+
+        <p id="status-message" class="status-message" aria-live="polite">
+          Loading sheet data...
+        </p>
+      </section>
+
+      <section class="results-card">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">Results</p>
+            <h2 id="results-title">No search yet</h2>
+          </div>
+          <p id="results-count" class="results-count">0 students</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Section</th>
+                <th>Kaushal Bodh</th>
+              </tr>
+            </thead>
+            <tbody id="results-body">
+              <tr class="placeholder-row">
+                <td colspan="4">Search results will appear here.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
