@@ -24,16 +24,16 @@
 
         <form id="search-form" class="filter-grid">
           <label class="field">
-            <span>Class</span>
+            <span>Select</span>
             <select id="class-select" required disabled>
-              <option value="">Loading classes...</option>
+              <option value="">Loading...</option>
             </select>
           </label>
 
           <label class="field">
             <span>Section</span>
             <select id="section-select" required disabled>
-              <option value="">Select a class first</option>
+              <option value="">Select first</option>
             </select>
           </label>
 
@@ -43,6 +43,42 @@
         <p id="status-message" class="status-message" aria-live="polite">
           Loading sheet data...
         </p>
+
+        <div class="feature-divider" aria-hidden="true"></div>
+
+        <p class="eyebrow">Kaushal Booth Search</p>
+        <h2>Search students by Kaushal Booth group</h2>
+        <p class="intro compact-intro">
+          Select a Kaushal Booth group and class range, then search to view
+          matching students and download the record in Excel format.
+        </p>
+
+        <form id="kaushal-form" class="filter-grid kaushal-search-grid">
+          <label class="field">
+            <span>Group</span>
+            <select id="kaushal-select" required disabled>
+              <option value="">Loading...</option>
+            </select>
+          </label>
+
+          <fieldset class="range-field">
+            <legend>Class Range</legend>
+            <label class="radio-option">
+              <input type="radio" name="class-range" value="3-5" />
+              <span>Class 3 to 5</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="class-range" value="6-8" />
+              <span>Class 6 to 8</span>
+            </label>
+          </fieldset>
+
+          <button id="kaushal-search-button" type="submit" disabled>Search</button>
+        </form>
+
+        <p id="kaushal-status-message" class="status-message" aria-live="polite">
+          Loading Kaushal Booth groups...
+        </p>
       </section>
 
       <section class="results-card">
@@ -51,7 +87,12 @@
             <p class="eyebrow">Results</p>
             <h2 id="results-title">No search yet</h2>
           </div>
-          <p id="results-count" class="results-count">0 students</p>
+          <div class="results-actions">
+            <p id="results-count" class="results-count">0 students</p>
+            <button id="export-button" class="secondary-button" type="button" disabled>
+              Download Excel
+            </button>
+          </div>
         </div>
 
         <div class="table-wrap">
@@ -67,6 +108,44 @@
             <tbody id="results-body">
               <tr class="placeholder-row">
                 <td colspan="4">Search results will appear here.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="results-card">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">Kaushal Booth Results</p>
+            <h2 id="kaushal-results-title">No search yet</h2>
+          </div>
+          <div class="results-actions">
+            <p id="kaushal-results-count" class="results-count">0 students</p>
+            <button
+              id="kaushal-export-button"
+              class="secondary-button"
+              type="button"
+              disabled
+            >
+              Download Excel
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Section</th>
+                <th>Kaushal Booth</th>
+              </tr>
+            </thead>
+            <tbody id="kaushal-results-body">
+              <tr class="placeholder-row">
+                <td colspan="4">Kaushal Booth search results will appear here.</td>
               </tr>
             </tbody>
           </table>
