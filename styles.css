@@ -113,11 +113,26 @@ h2 {
   line-height: 1.6;
 }
 
+.compact-intro {
+  max-width: 640px;
+}
+
+.feature-divider {
+  width: 100%;
+  height: 1px;
+  margin: 32px 0 26px;
+  background: linear-gradient(90deg, transparent, rgba(190, 91, 46, 0.28), transparent);
+}
+
 .filter-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 28px;
+}
+
+.kaushal-search-grid {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr) minmax(200px, 1fr);
 }
 
 .field {
@@ -128,6 +143,35 @@ h2 {
 
 .field span {
   font-weight: 600;
+}
+
+.range-field {
+  margin: 0;
+  padding: 14px 18px;
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  background: var(--panel-strong);
+  align-self: end;
+}
+
+.range-field legend {
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.radio-option + .radio-option {
+  margin-top: 12px;
+}
+
+.radio-option input {
+  accent-color: var(--accent);
 }
 
 select,
@@ -193,6 +237,28 @@ select:disabled {
   margin-bottom: 18px;
 }
 
+.results-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.secondary-button {
+  width: auto;
+  min-width: 180px;
+  padding: 0 20px;
+  color: var(--accent-dark);
+  background: #fff7f0;
+  border-color: rgba(190, 91, 46, 0.2);
+  box-shadow: none;
+}
+
+.secondary-button:hover:not(:disabled) {
+  box-shadow: 0 12px 24px rgba(143, 63, 29, 0.14);
+}
+
 .table-wrap {
   overflow: auto;
   border: 1px solid var(--stroke);
@@ -236,9 +302,17 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 
+  .kaushal-search-grid {
+    grid-template-columns: 1fr;
+  }
+
   .results-header {
     align-items: start;
     flex-direction: column;
+  }
+
+  .results-actions {
+    justify-content: flex-start;
   }
 }
 
